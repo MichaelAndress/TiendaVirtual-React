@@ -25,7 +25,7 @@ export const Producto = () => {
         <div className="col-md-6 mt-5">
           <img src={p.image} alt={p.title} height="400px" width="400px" />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 info-cart">
           <h4 className="text-uppercase text-black-50">{p.category}</h4>
           <h1 className="display-5">{p.title}</h1>
           <p className="lead fw-bolder">
@@ -34,7 +34,7 @@ export const Producto = () => {
           <h3 className="display-6 fw-bold my-4">${p.price}</h3>
           <p className="lead">{p.description}</p>
           <button className="btn btn-dark me-2" onClick={ ()=>addProducto(p) }>Agregar al carrito</button>
-          <NavLink to="/cart" className="btn btn-outline-dark">Ir al carrito</NavLink>
+          <NavLink to="/cart" className="btn btn-outline-danger">Ir al carrito</NavLink>
         </div>
       </div>
     </>

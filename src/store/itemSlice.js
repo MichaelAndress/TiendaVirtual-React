@@ -11,21 +11,29 @@ export const itemSlice = createSlice({
       const exist = state.productos.find((item)=> item.id === payload.id);
       if (exist) {
         // incrementar el item
-        state.productos.map((item)=> item.id === payload.id ? {...item, qty: item.qty +1} : item);
+        state.productos = state.productos.map((item)=> item.id === payload.id ? {...item, qty: item.qty +1} : item);
+        return;
       }else{
         state.productos.push(payload);
       }
     },
-    deleteing: (state, {payload}) => {
+    disminuir: (state, {payload}) => {
       const exist = state.productos.find((item)=> item.id === payload.id);
       if (exist.qty ===1) {
-        state.productos = state.productos.filter((item)=> item.id !== exist.id);
-      }else{
-        state.productos = state.productos.map((item)=> item.id === payload.id ? {...item,qty: item.qry-1}: item);
+        return;
       }
+      state.productos = state.productos.map((item)=> item.id === payload.id ? {...item, qty: item.qty-1}: item);
+      
+    },
+    deleting: (state, {payload})=>{
+      const exist = state.productos.find((item)=> item.id === payload.id);
+      if (!exist) {
+        return state;
+      }
+      state.productos = state.productos.filter((item)=> item.id !== payload.id);
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { add, deleting } = itemSlice.actions
+export const { add, disminuir, deleting } = itemSlice.actions

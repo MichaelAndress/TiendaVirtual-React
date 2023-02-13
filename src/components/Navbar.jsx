@@ -1,14 +1,8 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-
-
 export const Navbar = () => {
-
-  const { productos } = useSelector(state=> state.item);
-
-
-
+  const { productos } = useSelector((state) => state.item);
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -28,9 +22,9 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
+              <NavLink className="nav-link" aria-current="page" to="/">
                 Home
               </NavLink>
             </li>
@@ -50,18 +44,18 @@ export const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <div className="botones">
+          <div className="botones d-flex justify-content-center">
             <a href="" className="btn btn-outline-primary">
-                <i className="fa fa-sign-in me-1"></i>
-                Inicio
+              <i className="fa fa-sign-in me-1"></i>
+              Inicio
             </a>
             <a href="" className="btn btn-outline-success ms-2">
-                <i className="fa fa-user plus me-1"></i>
-                Registro
+              <i className="fa fa-user plus me-1"></i>
+              Registro
             </a>
             <a href="" className="btn btn-outline-danger ms-2">
-                <i className="fa fa-shopping-cart me-1"></i>
-                Carrito ({productos.length})
+              <i className="fa fa-shopping-cart me-1"></i>
+              Carrito ({productos.length})
             </a>
           </div>
         </div>
