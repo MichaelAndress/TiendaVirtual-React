@@ -16,7 +16,7 @@ export const Home = () => {
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center hero-text">
           <div className="container text-dark">
-            <h5 className="card-title display-3 fw-bolder mb-0">
+            <h5 className="card-title display-1 fw-bold">
               Nuevos Accesorios
             </h5>
             <p className="card-text lead fs-2">

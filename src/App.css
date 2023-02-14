@@ -1,10 +1,11 @@
 *{
   box-sizing: border-box;
+  font-family: inherit;
+}
+.hero{
+  background-color: #f5f5f5;
 }
 
-body{
-  background-color: black;
-}
 
 .grilla{
     display: grid;
@@ -21,6 +22,10 @@ body{
 }
 .cart-item{
   height: 200px;
+}
+.card-hero img{
+  height: 300px;
+  filter: saturate(200%);
 }
 
 
@@ -118,6 +123,105 @@ body{
   }
 
 
+
+
+  .card__a {
+    width: 300px;
+    border-radius: 20px;
+    background: #ffffff;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+   }
+   
+   .card-details__a {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+   }
+   
+   .card-button__a {
+    transform: translate(-50%, 125%);
+    text-decoration: none;
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   .text-body__a {
+    color: rgb(134, 134, 134);
+   }
+   
+   /*Text*/
+   .text-title__a {
+    font-size: 1.5em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card__a:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card__a:hover .card-button__a {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+  .btn2 {
+    font-size: 18px;
+    text-decoration: none;
+    color: #414141;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .btn2:focus,
+  .btn2:hover {
+    color: #000000;
+  }
+  
+  .btn2:focus:after,
+  .btn2:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .btn2:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+
   @media (max-width: 770px) {
     .hero-text div h5{
       font-size: 1.3rem;
@@ -137,6 +241,12 @@ body{
     } 
     .cart div button{
       margin-bottom: 10px;
+    }
+    .grilla{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 

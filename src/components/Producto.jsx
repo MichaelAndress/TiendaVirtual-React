@@ -33,8 +33,7 @@ export const Producto = () => {
           </p>
           <h3 className="display-6 fw-bold my-4">${p.price}</h3>
           <p className="lead">{p.description}</p>
-          <button className="btn btn-dark me-2" onClick={ ()=>addProducto(p) }>Agregar al carrito</button>
-          <NavLink to="/cart" className="btn btn-outline-danger">Ir al carrito</NavLink>
+          <button className="btn btn-outline-primary fw-bolder me-2" onClick={ ()=>addProducto(p) }>Agregar al carrito</button>
         </div>
       </div>
     </>

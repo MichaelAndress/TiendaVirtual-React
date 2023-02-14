@@ -27,15 +27,15 @@ export const Products = () => {
   return (
     <>
       <div className="container">
-        <h2 className="d-flex justify-content-center mt-5">Ultimos productos</h2>
+        <h2 className="d-flex justify-content-center mt-5 fw-bold">Ultimos productos</h2>
         <hr />
       </div>
       <div className="botones d-flex justify-content-center mt-5">
-        <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(products)}>All</button>
-        <button className="btn btn-outline-dark me-2" onClick={()=>filterProducts("men's clothing")}>Hombre</button>
-        <button className="btn btn-outline-dark me-2" onClick={()=>filterProducts("women's clothing")}>Mujer</button>
-        <button className="btn btn-outline-dark me-2" onClick={()=>filterProducts("jewelery")}>Joyas</button>
-        <button className="btn btn-outline-dark me-2" onClick={()=>filterProducts("electronics")}>Electronic</button>
+        <button className="btn2" onClick={()=>setFilter(products)}>All</button>
+        <button className="btn2" onClick={()=>filterProducts("men's clothing")}>Hombre</button>
+        <button className="btn2" onClick={()=>filterProducts("women's clothing")}>Mujer</button>
+        <button className="btn2" onClick={()=>filterProducts("jewelery")}>Joyas</button>
+        <button className="btn2" onClick={()=>filterProducts("electronics")}>Electronic</button>
       </div>
       {spinner ? (
         <div className="d-flex justify-content-center mt-5">
@@ -56,18 +56,18 @@ export const Products = () => {
         <div className="grilla mt-5 container">
           {
             filter.map((pro) => (
-              <div key={pro.id} className="card h-100 text-center p-4 mb-4">
+              <div key={pro.id} className="card__a text-center p-4 mb-4">
                 <img
                   src={pro.image}
                   className="card-img-top"
                   alt="..."
                   height="250px"
                 />
-                <div className="card-body">
-                  <h5>{pro.title.substring(0, 12)}</h5>
-                  <p className="card-text fw-bold lead">${pro.price}</p>
-                  <NavLink to={`/producto/${pro.id}`} className="btn btn-dark">
-                    Agregar
+                <div className="card-body mt-3">
+                  <h5 className="text-title__a">{pro.title.substring(0, 12)}</h5>
+                  <p className="card-text fw-bolder">${pro.price}</p>
+                  <NavLink to={`/producto/${pro.id}`} className="card-button__a fw-bold">
+                    Ver
                   </NavLink>
                 </div>
               </div>
