@@ -6,14 +6,12 @@ export const Cart = () => {
   const dispatch = useDispatch();
   const { productos } = useSelector((state) => state.item);
 
-  const handleButton=(e,producto)=>{
-    const x=e.target;
-    if (x.classList.contains('mas')) {
+    const increase=(producto)=>{
       dispatch(add(producto))
-    }else{
+    }
+    const decrease=(producto)=>{
       dispatch(disminuir(producto))
     }
-  };
 
   const del=(producto)=>{
     dispatch(deleting(producto))
@@ -40,10 +38,10 @@ export const Cart = () => {
                     {element.qty} X {element.price} = $ {element.qty * element.price}
                   </p>
                   <div className="botones">
-                    <button className="btn btn-outline-dark me-2" onClick={(e)=>handleButton(e,element)} >
+                    <button className="btn btn-outline-dark me-2" onClick={()=>decrease(element)} >
                       <i className="fa fa-minus"></i>
                     </button>
-                    <button className="btn btn-outline-dark mas me-2" onClick={(e)=>handleButton(e,element)}>
+                    <button className="btn btn-outline-dark mas me-2" onClick={()=>increase(element)}>
                       <i className="fa fa-plus"></i>
                     </button>
                     <button className="btn btn-danger" onClick={()=>del(element)}>
